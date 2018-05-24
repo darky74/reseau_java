@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Result</h1>
+    <p th:text="'id: ' + ${user.id}" />
+    <p th:text="'Prénom: ' + ${user.firstName}" />
+    <p th:text="'Nom: ' + ${user.lastName}" />
+    <p th:text="'Date de naissance: ' + ${user.dateNaisance}" />
+    <div>
+    <a href="/UsersList"><span>liste des utilisateurs</span></a>
+    </div>
+    <div>
+    <a th:href="@{'/delete/{id}'(id=${user.id})}"><span>Supprimer cet utilisateur<span></a>
+    </div>
+    <div>
+    <a th:href="@{'/updateUser/{id}'(id=${user.id})}"><span>Modifier cet utilisateur<span></a>
+    </div>
+    
+</body>
+</html>
